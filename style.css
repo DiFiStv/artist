@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+  text-align: center;
+}
+
+header {
+  padding: 30px 10px;
+  font-size: 22px;
+}
+
+.albums {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.album {
+  width: 180px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.album img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.album:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255,255,255,0.3);
+}
+
+.album-title {
+  margin-top: 10px;
+}
+
+.tracks {
+  max-width: 500px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.tracks h2 {
+  text-align: center;
+}
+
+.track {
+  margin-bottom: 20px;
+}

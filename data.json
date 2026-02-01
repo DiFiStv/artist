@@ -1,0 +1,24 @@
+{
+  "artist": "Дифис",
+  "albums": [
+    {
+      "title": "Путь",
+      "year": 2026,
+      "cover": "albums/path/cover.jpg",
+      "tracks": [
+        {
+          "title": "Бродяга",
+          "src": "albums/path/tramp.mp3"
+        },
+        {
+          "title": "Там далеко",
+          "src": "albums/path/faraway.mp3"
+        },
+        {
+          "title": "Гори",
+          "src": "albums/path/fire.mp3"
+        }
+      ]
+    }
+  ]
+}
