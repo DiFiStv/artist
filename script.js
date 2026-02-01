@@ -1,4 +1,7 @@
 let currentAudio = null;
+let audioList = [];
+
+const DEFAULT_VOLUME = 0.6;
 
 fetch('data.json')
   .then(res => res.json())
@@ -41,15 +44,28 @@ function init(data) {
 }
 
 function setupAudioControls() {
-  const audios = document.querySelectorAll('audio');
+  audioList = Array.from(document.querySelectorAll('audio'));
 
-  audios.forEach(audio => {
+  audioList.forEach((audio, index) => {
+    // стартовая громкость
+    audio.volume = DEFAULT_VOLUME;
+
+    // при запуске — останавливаем остальные
     audio.addEventListener('play', () => {
       if (currentAudio && currentAudio !== audio) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
       }
       currentAudio = audio;
+    });
+
+    // автопереход к следующему
+    audio.addEventListener('ended', () => {
+      const nextAudio = audioList[index + 1];
+      if (nextAudio) {
+        nextAudio.volume = DEFAULT_VOLUME;
+        nextAudio.play();
+      }
     });
   });
 }
