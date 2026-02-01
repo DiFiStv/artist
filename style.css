@@ -52,3 +52,10 @@ header {
 .track {
   margin-bottom: 20px;
 }
+
+audio {
+  width: 100%;
+  height: 32px;
+  filter: invert(1) hue-rotate(180deg);
+}
+
