@@ -36,27 +36,27 @@
         {
           "title": "Полуночная пицца",
           "src": "albums/goblin/03_pizza.mp3"
-        }
+        },
         {
           "title": "Мой мир",
           "src": "albums/goblin/04_myworld.mp3"
-        }
+        },
         {
           "title": "Тропа",
           "src": "albums/goblin/05_trail.mp3"
-        }
+        },
         {
           "title": "Спустись на Землю",
           "src": "albums/goblin/06_cometoearth.mp3"
-        }
+        },
         {
           "title": "Дом из бороды",
           "src": "albums/goblin/07_beardhouse.mp3"
-        }
+        },
         {
           "title": "Мир окутан",
           "src": "albums/goblin/08_worldshroud.mp3"
-        }
+        },
         {
           "title": "Я бы сел у дерева",
           "src": "albums/goblin/09_tree.mp3"
@@ -65,4 +65,5 @@
     }
   ]
 }
+
 
