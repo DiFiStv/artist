@@ -53,8 +53,41 @@
       ]
     },
     {
+      "title": "Радуги след",
+      "year": 2024,
+      "cover": "albums/rainbow/rainbow.jpg",
+      "tracks": [
+        {
+          "title": "Красный закат",
+          "src": "albums/rainbow/01_red.mp3"
+        },
+        {
+          "title": "Оранжевый кот",
+          "src": "albums/rainbow/02_orange.mp3"
+        },
+        {
+          "title": "Желтый песок",
+          "src": "albums/rainbow/03_yellow.mp3"
+        },
+        {
+          "title": "Зеленый фон",
+          "src": "albums/rainbow/04_green.mp3"
+        },
+        {
+          "title": "Голубой фонарь",
+          "src": "albums/rainbow/05_blue.mp3"
+        },
+        {
+          "title": "Синий плакат",
+          "src": "albums/rainbow/06_sea.mp3"
+        },
+        {
+          "title": "Фиолетовая тропа",
+          "src": "albums/rainbow/07_violet.mp3"
+        },
+    {
       "title": "Леший",
-      "year": 2026,
+      "year": 2025,
       "cover": "albums/goblin/goblin.jpg",
       "tracks": [
         {
@@ -97,6 +130,7 @@
     }
   ]
 }
+
 
 
 
