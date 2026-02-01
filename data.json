@@ -4,7 +4,7 @@
     {
       "title": "Путь",
       "year": 2026,
-      "cover": "albums/path/path.png",
+      "cover": "albums/path/path.jpg",
       "tracks": [
         {
           "title": "Бродяга",
@@ -22,3 +22,4 @@
     }
   ]
 }
+
