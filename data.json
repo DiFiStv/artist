@@ -2,6 +2,14 @@
   "artist": "Дифис",
   "albums": [
     {
+      "title": "Аккорды души",
+      "year": 2026,
+      "cover": "albums/guitar/chord.jpg",
+      "tracks": [
+        { "title": "Что нас ждет впереди", "src": "albums/guitar/01_cnzv.mp3" }
+      ]
+    },
+    {
       "title": "Путь",
       "year": 2026,
       "cover": "albums/path/path.jpg",
