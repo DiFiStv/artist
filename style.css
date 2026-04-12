@@ -62,4 +62,38 @@ audio {
   filter: invert(1) hue-rotate(180deg);
 }
 
+/*Картинка доната...*/
+.donate-pig {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  width: 80px;
+  z-index: 1000;
+}
 
+.donate-pig img {
+  width: 100%;
+  display: block;
+}
+
+.donate-pig .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.donate-pig:hover .hover {
+  opacity: 1;
+}
+/*...Картинка доната*/
+
+/*На телефоне*/
+@media (max-width: 768px) {
+  .donate-pig {
+    width: 60px;
+    left: 10px;
+    bottom: 10px;
+  }
+}
