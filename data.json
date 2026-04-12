@@ -6,7 +6,8 @@
       "year": 2026,
       "cover": "albums/mydarkness/md.jpg",
       "tracks": [
-        { "title": "Спасите", "src": "albums/mydarkness/01_save.mp3" }
+        { "title": "Спасите", "src": "albums/mydarkness/01_save.mp3" },
+        { "title": "Покой", "src": "albums/mydarkness/02_peace.mp3" }
       ]
     },
     {
