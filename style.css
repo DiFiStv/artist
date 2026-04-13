@@ -11,6 +11,11 @@ header {
   font-size: 22px;
 }
 
+footer {
+  padding: 30px 10px;
+  height: 40px;
+}
+
 .albums {
   display: flex;
   gap: 20px;
