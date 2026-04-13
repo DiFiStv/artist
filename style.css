@@ -67,7 +67,7 @@ audio {
   position: fixed;
   left: 20px;
   bottom: 20px;
-  width: 80px;
+  width: 110px;
   z-index: 1000;
 }
 
@@ -78,8 +78,9 @@ audio {
 
 .donate-pig .hover {
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 60px;
+  left: 90px;
+  width: 140px;
   opacity: 0;
   transition: opacity 0.3s;
 }
