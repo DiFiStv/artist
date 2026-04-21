@@ -13,6 +13,14 @@
       ]
     },
     {
+      "title": "Народный",
+      "year": 2026,
+      "cover": "albums/narod/narod.jpg",
+      "tracks": [
+        { "title": "& Ирэн.К - Как тяжело мне тебя отпускать", "src": "albums/narod/01_iren.mp3" }
+      ]
+    },
+    {
       "title": "Аккорды души",
       "year": 2026,
       "cover": "albums/guitar/chord.jpg",
