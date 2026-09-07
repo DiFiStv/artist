@@ -26,7 +26,8 @@
       "year": 2026,
       "cover": "albums/guitar/chord.jpg",
       "tracks": [
-        { "id": "2612", "title": "Что нас ждет впереди", "src": "albums/guitar/01_cnzv.mp3" }
+        { "id": "2612", "title": "Что нас ждет впереди", "src": "albums/guitar/01_cnzv.mp3" },
+        { "id": "2619", "title": "Снова в школу", "src": "albums/guitar/02_school.mp3" }
       ]
     },
     {
