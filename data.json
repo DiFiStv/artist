@@ -6,10 +6,10 @@
       "year": 2026,
       "cover": "albums/mydarkness/md.jpg",
       "tracks": [
-        { "title": "Спасите", "src": "albums/mydarkness/01_save.mp3" },
-        { "title": "Покой", "src": "albums/mydarkness/02_peace.mp3" },
-        { "title": "Крылья", "src": "albums/mydarkness/03_wings.mp3" },
-        { "title": "Пропаду", "src": "albums/mydarkness/04_lost.mp3" }
+        { "id": "2614", "title": "Спасите", "src": "albums/mydarkness/01_save.mp3" },
+        { "id": "2615", "title": "Покой", "src": "albums/mydarkness/02_peace.mp3" },
+        { "id": "2616", "title": "Крылья", "src": "albums/mydarkness/03_wings.mp3" },
+        { "id": "2617", "title": "Пропаду", "src": "albums/mydarkness/04_lost.mp3" }
       ]
     },
     {
@@ -17,7 +17,7 @@
       "year": 2026,
       "cover": "albums/narod/narod.jpg",
       "tracks": [
-        { "title": "& Ирэн.К - Как тяжело мне тебя отпускать", "src": "albums/narod/01_iren.mp3" }
+        { "id": "2613", "title": "& Ирэн.К - Как тяжело мне тебя отпускать", "src": "albums/narod/01_iren.mp3" }
       ]
     },
     {
@@ -25,7 +25,7 @@
       "year": 2026,
       "cover": "albums/guitar/chord.jpg",
       "tracks": [
-        { "title": "Что нас ждет впереди", "src": "albums/guitar/01_cnzv.mp3" }
+        { "id": "2612", "title": "Что нас ждет впереди", "src": "albums/guitar/01_cnzv.mp3" }
       ]
     },
     {
@@ -33,17 +33,17 @@
       "year": 2026,
       "cover": "albums/path/path.jpg",
       "tracks": [
-        { "title": "Бродяга", "src": "albums/path/01_tramp.mp3" },
-        { "title": "Там далеко", "src": "albums/path/02_faraway.mp3" },
-        { "title": "Гори", "src": "albums/path/03_fire.mp3" },
-        { "title": "Долина", "src": "albums/path/04_valley.mp3" },
-        { "title": "Места", "src": "albums/path/05_places.mp3" },
-        { "title": "Не забывай свои корни", "src": "albums/path/06_roots.mp3" },
-        { "title": "Надо идти", "src": "albums/path/07_needgo.mp3" },
-        { "title": "Хватит ругаться", "src": "albums/path/08_stopswearing.mp3" },
-        { "title": "Ты можешь скрасить мое одиночество", "src": "albums/path/09_paintloneliness.mp3" },
-        { "title": "Не вернуть", "src": "albums/path/10_notreturn.mp3" },
-        { "title": "А ты приди", "src": "albums/path/11_comeback.mp3" }
+        { "id": "2601", "title": "Бродяга", "src": "albums/path/01_tramp.mp3" },
+        { "id": "2602", "title": "Там далеко", "src": "albums/path/02_faraway.mp3" },
+        { "id": "2603", "title": "Гори", "src": "albums/path/03_fire.mp3" },
+        { "id": "2604", "title": "Долина", "src": "albums/path/04_valley.mp3" },
+        { "id": "2605", "title": "Места", "src": "albums/path/05_places.mp3" },
+        { "id": "2606", "title": "Не забывай свои корни", "src": "albums/path/06_roots.mp3" },
+        { "id": "2607", "title": "Надо идти", "src": "albums/path/07_needgo.mp3" },
+        { "id": "2608", "title": "Хватит ругаться", "src": "albums/path/08_stopswearing.mp3" },
+        { "id": "2609", "title": "Ты можешь скрасить мое одиночество", "src": "albums/path/09_paintloneliness.mp3" },
+        { "id": "2610", "title": "Не вернуть", "src": "albums/path/10_notreturn.mp3" },
+        { "id": "2611", "title": "А ты приди", "src": "albums/path/11_comeback.mp3" }
       ]
     },
     {
@@ -51,13 +51,13 @@
       "year": 2024,
       "cover": "albums/rainbow/rainbow.jpg",
       "tracks": [
-        { "title": "Красный закат", "src": "albums/rainbow/01_red.mp3" },
-        { "title": "Оранжевый кот", "src": "albums/rainbow/02_orange.mp3" },
-        { "title": "Желтый песок", "src": "albums/rainbow/03_yellow.mp3" },
-        { "title": "Зеленый фон", "src": "albums/rainbow/04_green.mp3" },
-        { "title": "Голубой фонарь", "src": "albums/rainbow/05_blue.mp3" },
-        { "title": "Синий плакат", "src": "albums/rainbow/06_sea.mp3" },
-        { "title": "Фиолетовая тропа", "src": "albums/rainbow/07_violet.mp3" }
+        { "id": "2401", "title": "Красный закат", "src": "albums/rainbow/01_red.mp3" },
+        { "id": "2402", "title": "Оранжевый кот", "src": "albums/rainbow/02_orange.mp3" },
+        { "id": "2403", "title": "Желтый песок", "src": "albums/rainbow/03_yellow.mp3" },
+        { "id": "2404", "title": "Зеленый фон", "src": "albums/rainbow/04_green.mp3" },
+        { "id": "2405", "title": "Голубой фонарь", "src": "albums/rainbow/05_blue.mp3" },
+        { "id": "2406", "title": "Синий плакат", "src": "albums/rainbow/06_sea.mp3" },
+        { "id": "2407", "title": "Фиолетовая тропа", "src": "albums/rainbow/07_violet.mp3" }
       ]
     },
     {
@@ -65,15 +65,15 @@
       "year": 2025,
       "cover": "albums/goblin/goblin.jpg",
       "tracks": [
-        { "title": "Лес ночной снова звал меня", "src": "albums/goblin/01_forest.mp3" },
-        { "title": "Русалка", "src": "albums/goblin/02_mermaid.mp3" },
-        { "title": "Полуночная пицца", "src": "albums/goblin/03_pizza.mp3" },
-        { "title": "Мой мир", "src": "albums/goblin/04_myworld.mp3" },
-        { "title": "Тропа", "src": "albums/goblin/05_trail.mp3" },
-        { "title": "Спустись на Землю", "src": "albums/goblin/06_cometoearth.mp3" },
-        { "title": "Дом из бороды", "src": "albums/goblin/07_beardhouse.mp3" },
-        { "title": "Мир окутан", "src": "albums/goblin/08_worldshroud.mp3" },
-        { "title": "Я бы сел у дерева", "src": "albums/goblin/09_tree.mp3" }
+        { "id": "2501", "title": "Лес ночной снова звал меня", "src": "albums/goblin/01_forest.mp3" },
+        { "id": "2502", "title": "Русалка", "src": "albums/goblin/02_mermaid.mp3" },
+        { "id": "2503", "title": "Полуночная пицца", "src": "albums/goblin/03_pizza.mp3" },
+        { "id": "2504", "title": "Мой мир", "src": "albums/goblin/04_myworld.mp3" },
+        { "id": "2505", "title": "Тропа", "src": "albums/goblin/05_trail.mp3" },
+        { "id": "2506", "title": "Спустись на Землю", "src": "albums/goblin/06_cometoearth.mp3" },
+        { "id": "2507", "title": "Дом из бороды", "src": "albums/goblin/07_beardhouse.mp3" },
+        { "id": "2508", "title": "Мир окутан", "src": "albums/goblin/08_worldshroud.mp3" },
+        { "id": "2509", "title": "Я бы сел у дерева", "src": "albums/goblin/09_tree.mp3" }
       ]
     }
   ]

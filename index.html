@@ -1,33 +1,100 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Музыка для души ❤️</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дифис | Музыка для души</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Yandex.RTB Загрузчик рекламы -->
+    <script>window.yaContextCb=window.yaContextCb||[]</script>
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
-<a href="https://www.donationalerts.com/r/difistv" class="donate-pig" target="_blank">
-  <img src="img/pig1.png" alt="Поддержать">
-  <img src="img/pig2.png" alt="Поддержать" class="hover">
-</a>
 <body>
 
-<header>
-  <h1>Музыка от сердца, для вашей души ❤️</h1>
-</header>
+    <!-- Левая панель: меню и хрюшка -->
+    <aside class="left-panel">
+        <nav class="side-menu">
+            <button class="menu-btn active" data-tab="audio">Аудиофайлы</button>
+            <button class="menu-btn" data-tab="about">Обо мне</button>
+        </nav>
+        <div class="donate-pig">
+            <a href="https://www.donationalerts.com/r/difistv" target="_blank" title="Поддержать автора">
+                <img src="img/pig1.png" alt="Поддержать" class="pig-main">
+            </a>
+            <div class="pig-hover">
+                <img src="img/pig2.png" alt="Мысль">
+            </div>
+        </div>
+    </aside>
 
-<main>
-  <section id="albums" class="albums"></section>
-  <section id="tracks" class="tracks"></section>
-</main>
+    <!-- Правая панель: реклама -->
+    <aside class="right-ads">
+        <div class="ad-banner">
+            <div id="yandex_rtb_R-A-20001724-1"></div>
+            <script>
+            window.yaContextCb.push(() => {
+                Ya.Context.AdvManager.render({
+                    "blockId": "R-A-20001724-1",
+                    "renderTo": "yandex_rtb_R-A-20001724-1"
+                })
+            })
+            </script>
+        </div>
+        <div class="ad-banner">
+            <div id="yandex_rtb_R-A-20001724-2"></div>
+            <script>
+            window.yaContextCb.push(() => {
+                Ya.Context.AdvManager.render({
+                    "blockId": "R-A-20001724-2",
+                    "renderTo": "yandex_rtb_R-A-20001724-2"
+                })
+            })
+            </script>
+        </div>
+    </aside>
 
-<footer>
-  <span>© 2026 vk/DiFiS</span>
-</footer>
-  
-<script src="script.js"></script>
+    <main class="main-content">
+        <!-- Вкладка Аудиофайлы (активна по умолчанию) -->
+        <section id="audio" class="tab-content active">
+            <h1 class="site-title">Музыка от сердца, для вашей души ❤️</h1>
+            
+            <div class="latest-release" id="latest-release">
+                <h2>🔥 Крайний релиз</h2>
+                <div id="latest-track-container">Загрузка...</div>
+            </div>
+
+            <h2 class="section-title">Альбомы</h2>
+            <div class="albums-carousel" id="albums-carousel"></div>
+            <div class="tracks" id="tracks-container"></div>
+        </section>
+
+        <!-- Вкладка Обо мне -->
+        <section id="about" class="tab-content">
+            <div class="about-container">
+                <div class="about-text" id="about-text">Загрузка...</div>
+                <div class="about-image">
+                    <img src="img/me.png" alt="Дифис">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно для истории альбома -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <h3 id="modal-title">Название альбома</h3>
+            <p id="modal-text">Описание...</p>
+            <button class="close-modal">Закрыть</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Группа <a href="https://vk.ru/difis_music" target="_blank">ВКонтакте</a></p>
+        <p>© Дифис 2026</p>
+        <div id="visitor-counter"></div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
-
