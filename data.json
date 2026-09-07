@@ -9,7 +9,8 @@
         { "id": "2614", "title": "Спасите", "src": "albums/mydarkness/01_save.mp3" },
         { "id": "2615", "title": "Покой", "src": "albums/mydarkness/02_peace.mp3" },
         { "id": "2616", "title": "Крылья", "src": "albums/mydarkness/03_wings.mp3" },
-        { "id": "2617", "title": "Пропаду", "src": "albums/mydarkness/04_lost.mp3" }
+        { "id": "2617", "title": "Пропаду", "src": "albums/mydarkness/04_lost.mp3" },
+        { "id": "2618", "title": "Песни", "src": "albums/mydarkness/05_songs.mp3" }
       ]
     },
     {
