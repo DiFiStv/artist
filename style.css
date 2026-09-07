@@ -407,4 +407,7 @@ footer a:hover {
     .album {
         width: 140px;
     }
+    .right-ads {
+        display: none;
+    }
 }
