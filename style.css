@@ -407,7 +407,8 @@ footer a:hover {
     .album {
         width: 140px;
     }
-    .right-ads {
-        display: none;
-    }
+}
+/*Отключение правого блока*/
+.right-ads {
+    display: none;
 }
