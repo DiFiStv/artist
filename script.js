@@ -4,8 +4,7 @@ const DEFAULT_VOLUME = 0.6;
 let allData = null;
 let storiesData = {};
 let albumsArray = [];
-let activeAlbumIndex = 0;
-let currentPlayingTrackInfo = null;
+let centerIndex = 0;
 
 // Загружаем все данные параллельно
 Promise.all([
@@ -17,10 +16,10 @@ Promise.all([
     allData = data;
     storiesData = stories;
     albumsArray = data.albums;
-    
+
     initAbout(me);
     initLatestRelease(latest, data);
-    initAlbumsCarousel(data);
+    initAlbumsCarousel();
 }).catch(err => console.error("Ошибка загрузки данных:", err));
 
 // 1. Переключение вкладок
@@ -28,7 +27,7 @@ document.querySelectorAll('.menu-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        
+
         btn.classList.add('active');
         document.getElementById(btn.dataset.tab).classList.add('active');
     });
@@ -67,24 +66,47 @@ function initLatestRelease(latestData, data) {
 }
 
 // 4. Карусель альбомов
-function initAlbumsCarousel(data) {
+function initAlbumsCarousel() {
+    centerIndex = 0;
+    renderCarousel();
+}
+
+function renderCarousel() {
     const carousel = document.getElementById('albums-carousel');
-    
-    data.albums.forEach((album, index) => {
+    carousel.innerHTML = '';
+
+    const totalAlbums = albumsArray.length;
+
+    for (let offset = -1; offset <= 1; offset++) {
+        const albumIdx = (centerIndex + offset + totalAlbums) % totalAlbums;
+        const album = albumsArray[albumIdx];
+
         const albumEl = document.createElement('div');
         albumEl.className = 'album';
-        albumEl.dataset.index = index;
+        if (offset === 0) {
+            albumEl.classList.add('active');
+        } else {
+            albumEl.classList.add('side');
+        }
+
         albumEl.innerHTML = `
             <button class="info-btn" title="История альбома">i</button>
             <img src="${album.cover}" alt="${album.title}">
             <div class="album-title">${album.title}</div>
         `;
-        
+
         albumEl.addEventListener('click', (e) => {
             if (e.target.classList.contains('info-btn')) return;
-            
-            const clickedIndex = parseInt(albumEl.dataset.index);
-            setActiveAlbum(clickedIndex);
+
+            if (offset === 0) {
+                showTracks(album);
+            } else if (offset === -1) {
+                centerIndex = (centerIndex - 1 + totalAlbums) % totalAlbums;
+                renderCarousel();
+            } else if (offset === 1) {
+                centerIndex = (centerIndex + 1) % totalAlbums;
+                renderCarousel();
+            }
         });
 
         albumEl.querySelector('.info-btn').addEventListener('click', (e) => {
@@ -93,56 +115,23 @@ function initAlbumsCarousel(data) {
         });
 
         carousel.appendChild(albumEl);
-    });
-    
-    setActiveAlbum(0);
+    }
+
+    showTracks(albumsArray[centerIndex]);
 }
 
-function setActiveAlbum(index) {
-    // Сохраняем информацию о текущем играющем треке
-    if (currentAudio && !currentAudio.paused) {
-        const currentSrc = currentAudio.src || currentAudio.querySelector('source')?.src;
-        currentPlayingTrackInfo = {
-            src: currentSrc,
-            currentTime: currentAudio.currentTime,
-            wasPlaying: true
-        };
-    } else {
-        currentPlayingTrackInfo = null;
-    }
-    
-    activeAlbumIndex = index;
-    const albums = document.querySelectorAll('.album');
-    const totalAlbums = albums.length;
-    
-    albums.forEach((album, i) => {
-        album.classList.remove('active', 'prev', 'next');
-        
-        const prevIndex = (index - 1 + totalAlbums) % totalAlbums;
-        const nextIndex = (index + 1) % totalAlbums;
-        
-        if (i === index) {
-            album.classList.add('active');
-        } else if (i === prevIndex) {
-            album.classList.add('prev');
-        } else if (i === nextIndex) {
-            album.classList.add('next');
-        }
-    });
-    
-    // Проверяем, нужно ли обновлять треки
-    const tracksContainer = document.getElementById('tracks-container');
-    const currentAlbumTitle = tracksContainer.querySelector('h2')?.textContent;
-    
-    if (currentAlbumTitle !== albumsArray[index].title) {
-        showTracks(albumsArray[index]);
-    }
-}
-
+// 5. Показ треков (ЭТА ФУНКЦИЯ БЫЛА ПОТЕРЯНА!)
 function showTracks(album) {
     const container = document.getElementById('tracks-container');
-    
-    container.innerHTML = `<h2>${album.title}</h2>` + 
+
+    let playingTrackSrc = null;
+    let playingTrackTime = 0;
+    if (currentAudio && !currentAudio.paused) {
+        playingTrackSrc = currentAudio.src;
+        playingTrackTime = currentAudio.currentTime;
+    }
+
+    container.innerHTML = `<h2>${album.title}</h2>` +
         album.tracks.map((track, i) => `
             <div class="track">
                 <h3>${track.title}</h3>
@@ -151,50 +140,39 @@ function showTracks(album) {
                 </audio>
             </div>
         `).join('');
-    
+
     setupAudioControls();
-    
-    // Восстанавливаем воспроизведение, если был играющий трек
-    if (currentPlayingTrackInfo && currentPlayingTrackInfo.wasPlaying) {
+
+    if (playingTrackSrc) {
         const newAudioElements = Array.from(document.querySelectorAll('#tracks-container audio'));
-        
         const restoredAudio = newAudioElements.find(a => {
             const audioSrc = a.src || a.querySelector('source')?.src;
-            return audioSrc && currentPlayingTrackInfo.src && 
-                   (audioSrc === currentPlayingTrackInfo.src || 
-                    audioSrc.endsWith(currentPlayingTrackInfo.src.split('/').pop()));
+            return audioSrc && playingTrackSrc &&
+                   (audioSrc === playingTrackSrc ||
+                    audioSrc.endsWith(playingTrackSrc.split('/').pop()));
         });
-        
+
         if (restoredAudio) {
-            restoredAudio.currentTime = currentPlayingTrackInfo.currentTime;
-            restoredAudio.play().catch(() => {
-                console.log('Автовоспроизведение заблокировано браузером');
-            });
+            restoredAudio.currentTime = playingTrackTime;
+            restoredAudio.play().catch(() => {});
         }
     }
 }
 
-// 5. Управление аудио
+// 6. Управление аудио
 function setupAudioControls() {
     audioList = Array.from(document.querySelectorAll('#tracks-container audio'));
     audioList.forEach((audio, index) => {
         audio.volume = DEFAULT_VOLUME;
-        
+
         audio.addEventListener('play', () => {
             if (currentAudio && currentAudio !== audio) {
                 currentAudio.pause();
             }
             currentAudio = audio;
         });
-        
-        audio.addEventListener('pause', () => {
-            if (currentAudio === audio) {
-                currentPlayingTrackInfo = null;
-            }
-        });
-        
+
         audio.addEventListener('ended', () => {
-            currentPlayingTrackInfo = null;
             const nextAudio = audioList[index + 1];
             if (nextAudio) {
                 nextAudio.volume = DEFAULT_VOLUME;
@@ -214,7 +192,7 @@ function setupSingleAudio(audio) {
     });
 }
 
-// 6. Модальное окно
+// 7. Модальное окно
 const modal = document.getElementById('modal-overlay');
 const modalTitle = document.getElementById('modal-title');
 const modalText = document.getElementById('modal-text');

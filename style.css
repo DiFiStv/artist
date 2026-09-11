@@ -145,6 +145,7 @@ body {
 
 .about-text {
     flex: 1;
+    min-width: 300px;
     font-size: 18px;
     line-height: 1.8;
     color: #ccc;
@@ -204,15 +205,18 @@ body {
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
+}
+
+.album.side {
     opacity: 0.4;
-    transform: scale(0.8);
     filter: blur(3px);
 }
 
-.album.prev, .album.next {
-    opacity: 0.6;
-    transform: scale(0.9);
-    filter: blur(1px);
+.album.active {
+    opacity: 1;
+    filter: blur(0);
+    box-shadow: 0 0 40px rgba(255,255,255,0.3);
+    z-index: 10;
 }
 
 .album.active {
@@ -403,11 +407,15 @@ footer a:hover {
     }
     .albums-carousel {
         gap: 20px;
+        padding: 40px 10px;
+        justify-content: center; 
     }
+    
     .album {
         width: 140px;
     }
 }
+
 /*Отключение правого блока*/
 .right-ads {
     display: none;
