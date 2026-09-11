@@ -369,16 +369,13 @@ footer a:hover {
 /* Адаптив для телефонов */
 @media (max-width: 768px) {
     .left-panel {
-        width: 100%;
-        height: auto;
-        position: relative;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        border-right: none;
-        border-bottom: 1px solid #333;
+        display: none;
     }
+    
+    .right-ads {
+        display: none;
+    }
+    
     .side-menu {
         flex-direction: row;
         padding: 0;
