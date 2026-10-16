@@ -19,7 +19,8 @@
         { "id": "0403", "title": "Крылья", "src": "albums/mydarkness/03_wings.mp3" },
         { "id": "0404", "title": "Пропаду", "src": "albums/mydarkness/04_lost.mp3" },
         { "id": "0405", "title": "Песни", "src": "albums/mydarkness/05_songs.mp3" },
-        { "id": "0406", "title": "Мои мысли горят", "src": "albums/mydarkness/06_thoughts.mp3" }
+        { "id": "0406", "title": "Мои мысли горят", "src": "albums/mydarkness/06_thoughts.mp3" },
+        { "id": "0407", "title": "Улетай", "src": "albums/mydarkness/07_fly.mp3" }
       ]
     },
     {
