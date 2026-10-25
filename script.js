@@ -38,31 +38,50 @@ function initAbout(meData) {
     document.getElementById('about-text').innerText = meData.text;
 }
 
-// 3. Крайний релиз
+// 3. Крайние релизы (несколько треков)
 function initLatestRelease(latestData, data) {
     const container = document.getElementById('latest-track-container');
-    let foundTrack = null;
-    let foundAlbum = null;
+    const ids = latestData.latestTrackIds || [];
 
+    if (!ids.length) {
+        container.innerHTML = "<p>Скоро...</p>";
+        return;
+    }
+
+    // Собираем все треки в плоский список с ссылкой на альбом
+    const allTracks = [];
     for (const album of data.albums) {
-        const track = album.tracks.find(t => t.id === latestData.latestTrackId);
-        if (track) {
-            foundTrack = track;
-            foundAlbum = album;
-            break;
+        for (const track of album.tracks) {
+            allTracks.push({ track, album });
         }
     }
 
-    if (foundTrack && foundAlbum) {
-        container.innerHTML = `
-            <p style="color:#aaa; margin-bottom:5px;">из альбома "${foundAlbum.title}"</p>
-            <h3 style="margin:0 0 10px 0;">${foundTrack.title}</h3>
-            <audio controls><source src="${foundTrack.src}" type="audio/mpeg"></audio>
-        `;
-        setupSingleAudio(container.querySelector('audio'));
-    } else {
-        container.innerHTML = "<p>Скоро...</p>";
+    // Ищем треки по ID, сохраняя порядок из new.json
+    const found = [];
+    for (const id of ids) {
+        const item = allTracks.find(t => t.track.id === id);
+        if (item) found.push(item);
     }
+
+    if (!found.length) {
+        container.innerHTML = "<p>Скоро...</p>";
+        return;
+    }
+
+    container.innerHTML = found.map(({ track, album }) => `
+        <div class="latest-track">
+            <p class="latest-track-album">из альбома "${album.title}"</p>
+            <h3 class="latest-track-title">${track.title}</h3>
+            <audio controls>
+                <source src="${track.src}" type="audio/mpeg">
+            </audio>
+        </div>
+    `).join('');
+
+    // Настраиваем все аудио: громкость + пауза предыдущего
+    container.querySelectorAll('audio').forEach(audio => {
+        setupSingleAudio(audio);
+    });
 }
 
 // 4. Карусель альбомов

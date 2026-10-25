@@ -169,20 +169,25 @@ body {
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10% 90%, transparent 100%);
 }
 
-/* Крайний релиз */
-.latest-release {
-    background: linear-gradient(135deg, #1a1a1a, #252525);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    border-radius: 15px;
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto 40px auto;
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.05);
+/* Крайние релизы */
+.latest-track {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.15);
 }
-
-.latest-release h2 {
-    margin-top: 0;
-    color: #ffd700;
+.latest-track:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.latest-track:first-child {
+    padding-top: 0;
+}
+.latest-track-album {
+    color: #aaa;
+    margin: 0 0 5px 0;
+    font-size: 13px;
+}
+.latest-track-title {
+    margin: 0 0 10px 0;
 }
 
 /* Карусель альбомов */
