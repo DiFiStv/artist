@@ -78,9 +78,32 @@ function initLatestRelease(latestData, data) {
         </div>
     `).join('');
 
-    // Настраиваем все аудио: громкость + пауза предыдущего
-    container.querySelectorAll('audio').forEach(audio => {
-        setupSingleAudio(audio);
+    // Настраиваем все аудио: громкость + пауза предыдущего + автопереход
+    setupLatestAudioControls();
+}
+
+// Автопереход для блока "Крайние релизы"
+function setupLatestAudioControls() {
+    const container = document.getElementById('latest-track-container');
+    const latestAudios = Array.from(container.querySelectorAll('audio'));
+
+    latestAudios.forEach((audio, index) => {
+        audio.volume = DEFAULT_VOLUME;
+
+        audio.addEventListener('play', () => {
+            if (currentAudio && currentAudio !== audio) {
+                currentAudio.pause();
+            }
+            currentAudio = audio;
+        });
+
+        audio.addEventListener('ended', () => {
+            const nextAudio = latestAudios[index + 1];
+            if (nextAudio) {
+                nextAudio.volume = DEFAULT_VOLUME;
+                nextAudio.play().catch(() => {});
+            }
+        });
     });
 }
 
