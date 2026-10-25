@@ -2,6 +2,14 @@
   "artist": "Дифис",
   "albums": [
     {
+      "title": "Чилл для тебя",
+      "year": 2026,
+      "cover": "albums/foryou/foryou.jpg",
+      "tracks": [
+        { "id": "0601", "title": "Стоп", "src": "albums/foryou/04_stop.mp3" }
+      ]
+    },
+    {
       "title": "Эхо прошлого",
       "year": 2026,
       "cover": "albums/echo/echo.jpg",
