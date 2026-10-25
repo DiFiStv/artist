@@ -69,12 +69,12 @@ function initLatestRelease(latestData, data) {
     }
 
     container.innerHTML = found.map(({ track, album }) => `
-        <div class="latest-track">
-            <p class="latest-track-album">из альбома "${album.title}"</p>
-            <h3 class="latest-track-title">${track.title}</h3>
+        <div class="track latest-track">
+            <h3>${track.title}</h3>
             <audio controls>
                 <source src="${track.src}" type="audio/mpeg">
             </audio>
+            <p class="latest-track-album">из альбома «${album.title}»</p>
         </div>
     `).join('');
 

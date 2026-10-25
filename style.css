@@ -170,24 +170,22 @@ body {
 }
 
 /* Крайние релизы */
-.latest-track {
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+.latest-release {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
 }
-.latest-track:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+
+.latest-release .track {
+    text-align: left;
 }
-.latest-track:first-child {
-    padding-top: 0;
-}
+
+/* Подпись про альбом — снизу, мелко и неброско */
 .latest-track-album {
-    color: #aaa;
-    margin: 0 0 5px 0;
-    font-size: 13px;
-}
-.latest-track-title {
-    margin: 0 0 10px 0;
+    margin: 8px 0 0 0;
+    font-size: 12px;
+    color: #777;
+    font-style: italic;
+    text-align: right;
 }
 
 /* Карусель альбомов */
