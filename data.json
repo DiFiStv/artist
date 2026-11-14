@@ -68,7 +68,8 @@
         { "id": "0008", "title": "Хватит ругаться", "src": "albums/path/08_stopswearing.mp3" },
         { "id": "0009", "title": "Ты можешь скрасить мое одиночество", "src": "albums/path/09_paintloneliness.mp3" },
         { "id": "0010", "title": "Не вернуть", "src": "albums/path/10_notreturn.mp3" },
-        { "id": "0011", "title": "А ты приди", "src": "albums/path/11_comeback.mp3" }
+        { "id": "0011", "title": "А ты приди", "src": "albums/path/11_comeback.mp3" },
+        { "id": "0012", "title": "Знаки", "src": "albums/path/12_sign.mp3" }
       ]
     },
     {
