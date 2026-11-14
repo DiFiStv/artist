@@ -15,7 +15,7 @@
       "cover": "albums/echo/echo.jpg",
       "tracks": [
         { "id": "0501", "title": "Одинокий свет", "src": "albums/echo/01_light.mp3" },
-        { "id": "0502", "title": "Два крыла", "src": "albums/echo/01_2wings.mp3" }
+        { "id": "0502", "title": "Два крыла", "src": "albums/echo/02_2wings.mp3" }
       ]
     },
     {
